@@ -1,24 +1,25 @@
-import logo from './logo.svg';
+import { Header } from './Components/Header/Header';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import { Container, ThemeProvider } from 'react-bootstrap';
+import { Home } from './Components/Main/Home';
 
 function App() {
+
+  const breakpoints=[]
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn Reac
-        </a>
-      </header>
-    </div>
+      <>
+        <Header />
+        <Container fluid className="px-0">
+          <ThemeProvider
+            breakpoints={{ breakpoints }}
+            minBreakpoint="xxs"
+          >
+            <Home />
+          </ThemeProvider>
+        </Container>
+      </>
   );
 }
 
