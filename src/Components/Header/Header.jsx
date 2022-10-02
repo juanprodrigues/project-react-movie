@@ -8,7 +8,9 @@ export const Header = () =>{
     return (
         <Navbar bg="dark" variant="dark" expand="lg">
             <Container>
-                <NavBar/>
+                <NavBar
+                    items={['Inicio', 'Peliculas']}
+                />
             </Container>
         </Navbar>
     );
