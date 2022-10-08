@@ -9,7 +9,7 @@ export const Header = () =>{
         <Navbar bg="dark" variant="dark" expand="lg">
             <Container>
                 <NavBar
-                    items={['Inicio', 'Peliculas']}
+                    items={['Inicio']}
                 />
             </Container>
         </Navbar>

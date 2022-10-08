@@ -1,10 +1,13 @@
 import imagen from "./../../assets/logo.png";
 import { Form, Nav, Navbar } from "react-bootstrap/";
 import { Dropdown } from "./Dropdown";
+import { Link } from "react-router-dom";
 
 export const NavBar = ({ items }) => {
   return (
     <>
+ 
+
       <Navbar.Brand href="#home">
         <img
           src={imagen}
@@ -21,8 +24,13 @@ export const NavBar = ({ items }) => {
             <Nav.Link key={item} href={`#${item}`}>
               {item}
             </Nav.Link>
-          ))}
 
+         
+
+
+
+          ))}
+ <Nav.Link as={Link} to="/peliculas" >Peliculas</Nav.Link>
           <Dropdown
             title="Generos"
             items={["Accion", "Comedia", "Aventura", "Terror", "Drama"]}
@@ -35,11 +43,25 @@ export const NavBar = ({ items }) => {
               aria-label="Search"
             />
           </Form>
-          <Nav.Link href="#Carrito">Carrito</Nav.Link>
-          <Nav.Link href="#Ingresar">Ingresar</Nav.Link>
-          <Nav.Link href="#Registrate">Registrate</Nav.Link>
+          
+          <Nav.Link as={Link} to="/contacto" >Carrito</Nav.Link>
+   
+          <Nav.Link as={Link} to="/nosotros"  >Ingresar</Nav.Link> 
+
+          <Nav.Link as={Link} to="/" >Registrate</Nav.Link>
+          
+          
+          
+
+
+
         </Nav>
       </Navbar.Collapse>
+
+
+
+
+   
     </>
   );
 };

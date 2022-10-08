@@ -1,0 +1,27 @@
+export const mockObject = {
+    Title: "Los niños invisibles",
+    Year: "2001",
+    Rated: "N/A",
+    Released: "26 Oct 2001",
+    Runtime: "90 min",
+    Genre: "Comedy, Drama",
+    Director: "Lisandro Duque Naranjo",
+    Writer: "Lisandro Duque Naranjo, Gabriel García Márquez",
+    Actors: "Guillermo Castañeda, Ingrid Cielo Ospina, Gustavo Camacho",
+    Plot: "A young boy and his friends attempt to become invisible to get closer to the girls they desire. They must steal the magic recipe and its ingredients without getting caught to perform the ritual.",
+    Language: "Spanish",
+    Country: "Venezuela, Colombia",
+    Awards: "3 wins & 1 nomination",
+    Poster: "https://m.media-amazon.com/images/M/MV5BM2MxZjZiM2YtMjgxMS00ZWU0LTg0NmUtNDZjODljMWI4ZDBlXkEyXkFqcGdeQXVyNzg5OTk2OA@@._V1_SX300.jpg",
+    Ratings: [],
+    Metascore: "N/A",
+    imdbRating: "6.8",
+    imdbVotes: "268",
+    imdbID: "tt0264944",
+    Type: "movie",
+    DVD: "N/A",
+    BoxOffice: "N/A",
+    Production: "N/A",
+    Website: "N/A"
+}
+    
