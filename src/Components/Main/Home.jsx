@@ -1,9 +1,11 @@
 import { Carousel } from "react-bootstrap"
+import Peliculas from "../Header/Peliculas"
 import slide1 from './../../assets/slide1.jpg'
 import slide2 from './../../assets/slide2.jpg'
 import slide3 from './../../assets/slide3.jpg'
-
 export const Home = () => {
+
+
   return (
       <>
           <Carousel>
@@ -29,6 +31,12 @@ export const Home = () => {
                   />
               </Carousel.Item>
           </Carousel>
+      <div className="container">
+
+
+          <Peliculas ></Peliculas>
+
+      </div>
       </>
   );
 }

@@ -1,18 +1,15 @@
-import {Container,Navbar} from 'react-bootstrap/';
-import { NavBar } from './NavBar';
+import { Container, Navbar } from "react-bootstrap/";
+import { NavBar } from "./NavBar";
 
-
-
-export const Header = () =>{
-
-    return (
-        <Navbar bg="dark" variant="dark" expand="lg">
-            <Container>
-                <NavBar
-                    items={['Inicio']}
-                />
-            </Container>
-        </Navbar>
-    );
-    
-}
+export const Header = () => {
+  return (
+    // <Navbar bg="dark" variant="dark" expand="lg">
+    <Navbar expand="lg">
+      <Container>
+        <NavBar
+        // items={'Inicio'}
+        />
+      </Container>
+    </Navbar>
+  );
+};
