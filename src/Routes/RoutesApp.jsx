@@ -9,7 +9,7 @@ import Registrate from "../Components/Header/Registrate";
 import { Home } from "../Components/Main/Home";
 import Detalles from "../Components/Carts/Detalles";
 import Error from "../Components/Utils/Error";
-import { ConnectedRouter } from "react-router-redux";
+
 
 // export const history = createHistory();
 // history.listen((location, action) => {
