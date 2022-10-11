@@ -30,7 +30,7 @@ function App() {
       backdropFilter: "blur(8px)",
     },
   };
-  if(appTheme!="https://image.tmdb.org/t/p/w185_and_h278_bestv2/5GA3vV1aWWHTSDO5eno8V5zDo8r.jpg"){
+   //if(appTheme!="https://image.tmdb.org/t/p/w185_and_h278_bestv2/5GA3vV1aWWHTSDO5eno8V5zDo8r.jpg"){
     // console.log("estoy dentro de una pelicula")
     // si funca
     // delete styles.header.backgroundImage
@@ -38,7 +38,7 @@ function App() {
     // styles.header.backgroundColor="rgb(8 15 40 / 68%)" 
 
 
-  }
+   //}
 
   return (
     <div style={styles.header}>
