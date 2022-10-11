@@ -1,0 +1,8 @@
+.nav-link,.p-3{
+  color:rgb(255, 255, 255 )!important
+
+}
+.nav-link:hover,.p-3:hover{
+  color:rgb(0, 122, 255)!important
+  /* color: "#007aff" !important */
+}
