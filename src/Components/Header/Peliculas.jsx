@@ -44,6 +44,7 @@ const Peliculas = () => {
 
   return (
     <div>
+      <br />
       <div>
         {/* la suma de los md tiene que ser 12 */}
         <Row>
