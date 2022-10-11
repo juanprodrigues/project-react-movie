@@ -1,7 +1,7 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import Card from 'react-bootstrap/Card';
 import { Link } from "react-router-dom";
-import { ContextoBackground } from '../../Contexto/ContextoBackground';
+//import { ContextoBackground } from '../../Contexto/ContextoBackground';
 
 function Cards(props) {
   // console.log("dentro de la card"+props.id)
