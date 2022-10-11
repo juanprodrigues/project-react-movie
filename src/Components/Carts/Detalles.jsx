@@ -1,4 +1,4 @@
-import React, { useContext, useRef } from "react";
+import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
 import { mockTest } from "../../mock/mockTest";
 import { mockGeneros } from "../../mock/mockGeneros";
