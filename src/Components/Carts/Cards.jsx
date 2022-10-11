@@ -9,7 +9,7 @@ function Cards(props) {
 
   //llamamos el contexto y le pasamis el nuevo fondo
   // const ctx = useContext(AppContextO);
-  const ctx = useContext(ContextoBackground);
+  // const ctx = useContext(ContextoBackground);
   // console.log(ctx.appTheme);
  
   return (
