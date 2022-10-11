@@ -1,22 +1,26 @@
 import React from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-
+import { useContext } from "react";
+import { ContextoBackground } from "../../Contexto/ContextoBackground";
+import fondo from "./../../assets/fondo.png";
 import Filas from "../Carts/Filas";
 import { mockTest } from "../../mock/mockTest";
 
 const Peliculas = () => {
+  const ctx = useContext(ContextoBackground);
+  ctx.setappTheme(fondo);
   // prosesar el mock
-  //   https://image.tmdb.org/t/p/w185_and_h278_bestv2/7VuQopunJnHKI1xejbdRUyDbP0S.jpg
+  //   https://image.tmdb.org/t/p/w500/7VuQopunJnHKI1xejbdRUyDbP0S.jpg
   //   console.log(mockTest.results[0].original_title);
   //   console.log(mockTest.results[0].poster_path);
-
+  // https://image.tmdb.org/t/p/w500/
   // se puede usar el siguiente endpoint-->
   // https://api.themoviedb.org/3/movie/popular?api_key=e89c54fdd607bf1bf15474118f3abb7b&language=en-US&page=1
 
   // const titulo = mockTest.results[0].original_title;
   // const dirImage =
-  //   "https://image.tmdb.org/t/p/w185_and_h278_bestv2/" + mockTest.results[0].poster_path;
+  //   "https://image.tmdb.org/t/p/w500/" + mockTest.results[0].poster_path;
 
   const listamia = mockTest.results;
 
@@ -44,7 +48,6 @@ const Peliculas = () => {
         {/* la suma de los md tiene que ser 12 */}
         <Row>
           <Col xs={12} md={9} className="col-auto text-center">
-            Enviar las cartas
             <Row className="container">
               {/* <Row className="container" Style="margin-left: 12%; "> */}
               {mostrar}

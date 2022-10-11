@@ -3,5 +3,6 @@
 
 }
 .nav-link:hover,.p-3:hover{
-  color:rgb(221, 33, 33)!important
+  color:rgb(0, 122, 255)!important
+  /* color: "#007aff" !important */
 }
