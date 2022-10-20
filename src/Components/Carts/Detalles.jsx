@@ -6,6 +6,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "./misEstilos.css";
 import { ContextoBackground } from "../../Contexto/ContextoBackground";
+import VideoTrailer from "../../APIYoutobe/components/VideoTrailer";
 const Detalles = (props) => {
   //se usa para indentificar la pelicula, se puede encontrar en el router
   const { id } = useParams();
@@ -73,6 +74,8 @@ const Detalles = (props) => {
               <Row>voto promedio: {peliculaObjeto.vote_average}</Row>
               <Row>Visión general: {peliculaObjeto.overview}</Row>
               <Row>Popularidad: {peliculaObjeto.popularity}</Row>
+              <Row>Trailer</Row>
+              <VideoTrailer nombreYoutobe={peliculaObjeto.title+"| Official Trailer"}></VideoTrailer>
             </div>
           </Col>
         </Row>
