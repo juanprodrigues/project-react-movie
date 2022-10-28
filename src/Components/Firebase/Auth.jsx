@@ -36,11 +36,11 @@ const Auth = (props) => {
     const correo = e.target[0].value;
     const password = e.target[1].value;
 
-    if (authMode == false) {
+    if (authMode) {
       crearUsuario(correo, password);
     }
 
-    if (authMode == true) {
+    if (authMode) {
       iniciarSesion(correo, password);
     }
   };
