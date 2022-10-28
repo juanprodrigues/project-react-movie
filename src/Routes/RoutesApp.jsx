@@ -9,6 +9,8 @@ import Registrate from "../Components/Header/Registrate";
 import { Home } from "../Components/Main/Home";
 import Detalles from "../Components/Carts/Detalles";
 import Error from "../Components/Utils/Error";
+import Logueo from "../Components/Firebase/Logueo";
+import AppFirebase from "../Components/Firebase/AppFirebase";
 
 
 // export const history = createHistory();
@@ -30,7 +32,7 @@ const RoutesApp = () => {
             <Route
               path="/ingresar"
               caseSensitive={false}
-              element={<Ingresar />}
+              element={<AppFirebase />}
             />
             <Route
               path="/carrito"
@@ -40,7 +42,7 @@ const RoutesApp = () => {
             <Route
               path="/registrate"
               caseSensitive={false}
-              element={<Registrate />}
+              element={< Registrate/>}
             />
 
             <Route
