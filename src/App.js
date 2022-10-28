@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-
 import RoutesApp from "./Routes/RoutesApp";
 import { ContextoBackground } from "./Contexto/ContextoBackground";
-import AppFirebase from "./Components/Firebase/AppFirebase";
 // export const AppContextO= React.createContext("ligth");
 function App() {
   // const [appTheme, setappTheme] = useState(

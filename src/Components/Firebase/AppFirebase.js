@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import Auth from "./Auth";
 import { app } from "./fb";
 import Home from "./Home";
-import Logueo from "./Logueo";
 
 function AppFirebase() {
   const [usuario, setUsuario] = React.useState(null);

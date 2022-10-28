@@ -7,7 +7,6 @@ import Registrar from "./Registrar";
 const Auth = (props) => {
   console.log(props.setUsuario);
   let [authMode, setAuthMode] = useState(true);
-  const [ingresoFallo, setingresoFallo] = useState(false);
   //--------------------------Firebase--------------------------------------------------------
   const crearUsuario = (correo, password) => {
     app

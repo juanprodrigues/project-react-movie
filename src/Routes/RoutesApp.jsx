@@ -3,13 +3,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Header } from "../Components/Header/Header";
 import Peliculas from "../Components/Header/Peliculas";
-import Ingresar from "../Components/Header/Ingresar";
 import Carrito from "../Components/Header/Carrito";
 import Registrate from "../Components/Header/Registrate";
 import { Home } from "../Components/Main/Home";
 import Detalles from "../Components/Carts/Detalles";
 import Error from "../Components/Utils/Error";
-import Logueo from "../Components/Firebase/Logueo";
 import AppFirebase from "../Components/Firebase/AppFirebase";
 
 
