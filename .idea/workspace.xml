@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9f791679-d56e-48b9-a0ab-aee83d1e2994" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Carts/Cards.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Carts/Cards.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Carts/Columnas.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Carts/Columnas.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Carts/Detalles.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Carts/Detalles.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Carts/Filas.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Carts/Filas.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Carts/imagen.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Carts/misEstilos.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Carts/misEstilos.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Header/Carrito.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Header/Carrito.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Header/Dropdown.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Header/Dropdown.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Header/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Header/Ingresar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Header/Ingresar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Header/NavBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Header/NavBar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Header/Peliculas.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Header/Peliculas.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Header/Registrate.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Header/Registrate.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Header/misEstilos.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Header/misEstilos.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Routes/RoutesApp.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Routes/RoutesApp.jsx" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2JIAq40puxagBNXTjA02JTkkxZf" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9f791679-d56e-48b9-a0ab-aee83d1e2994" name="Changes" comment="" />
+      <created>1671755453952</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1671755453952</updated>
+    </task>
+    <servers />
+  </component>
+</project>

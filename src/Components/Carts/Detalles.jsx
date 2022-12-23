@@ -7,9 +7,10 @@ import Col from "react-bootstrap/Col";
 import "./misEstilos.css";
 import { ContextoBackground } from "../../Contexto/ContextoBackground";
 import VideoTrailer from "../../APIYoutobe/components/VideoTrailer";
-
 import dirSuma from "./../../assets/suma.png";
+
 const Detalles = (props) => {
+
   //se usa para indentificar la pelicula, se puede encontrar en el router
   const { id } = useParams();
 
@@ -70,7 +71,7 @@ const Detalles = (props) => {
                 />
               </Row>
               <Row>
-                <Col  md={4}>
+                <Col md={4}>
                   <h1 style={{ color: "white" }}> {peliculaObjeto.title}</h1>
                 </Col>
                 <Col md={3}>
@@ -81,18 +82,12 @@ const Detalles = (props) => {
                   />
                 </Col>
               </Row>
-              {/* <Row>
-                <h6>{peliculaObjeto.original_title}</h6>
-              </Row> */}
               <Row>
                 Genero:
                 {newStr}
               </Row>
               <Row>Fecha de estreno: {peliculaObjeto.release_date}</Row>
-              {/* <Row>voto promedio: {peliculaObjeto.vote_average}</Row> */}
               <Row>Sinopsis: {peliculaObjeto.overview}</Row>
-              {/* <Row>Popularidad: {peliculaObjeto.popularity}</Row> */}
-              {/* <Row>Trailer</Row> */}
             </div>
           </Col>
         </Row>

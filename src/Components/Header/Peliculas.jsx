@@ -36,8 +36,9 @@ const Peliculas = () => {
 
     return listaAux;
   }
-  // Dividir en grupo de 4 artículos
   
+  
+  // Dividir en grupo de 4 artículos
   var result = dividirEnListaChicas(listamia, 4);
 
   const mostrar = result.map((item) => <Filas key={item.id} datos={item} />);
@@ -56,24 +57,12 @@ const Peliculas = () => {
           </Col>
 
           <Col xs={6} md={3}>
-            {/* comp aux */}
             <Col className="col-auto text-center">Mas Peliculas</Col>
             <Col className="col-auto text-center">Peluculas Destacadas</Col>
             <Col className="col-auto text-center">Top Estrenos</Col>
           </Col>
         </Row>
       </div>
-      {/* Mostrar cart de peliculas tipo grilla
-             4 columnas y 6 filas
-             y 3 componentes a los constados
-             mas pelucilas
-             Peli destcadas
-             mas pelis 
-             
-             para una tables los comp se van a bajo y cambia a 3 columnas por X
-
-             
-             */}
     </div>
   );
 };
