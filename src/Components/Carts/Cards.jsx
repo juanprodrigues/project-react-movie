@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 //import { ContextoBackground } from '../../Contexto/ContextoBackground';
 
 function Cards(props) {
-  
+  // console.log(props)
   return (
     <Link to={`/detalles/${props.id}`} style={{ textDecoration: 'none' ,color: "black"}}>
     <Card className='border-0' style={{ width: '100%' }}>

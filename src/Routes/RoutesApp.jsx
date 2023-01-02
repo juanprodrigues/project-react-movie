@@ -9,6 +9,8 @@ import { Home } from "../Components/Main/Home";
 import Detalles from "../Components/Carts/Detalles";
 import Error from "../Components/Utils/Error";
 import AppFirebase from "../Components/Firebase/AppFirebase";
+import Generos from "../Components/Header/Generos";
+import Test from "./Test";
 
 const RoutesApp = () => {
   return (
@@ -39,6 +41,10 @@ const RoutesApp = () => {
             element={<Home />}
           />
           <Route path="detalles/:id" element={<Detalles />}></Route>
+          <Route path="genero/:id" element={<Generos />}></Route>
+
+          <Route path="search/:name" element={<Test />}></Route>
+
           {/* en elcaso que no se encuentre redireciona a un 404 */}
           <Route
             path="*"

@@ -2,6 +2,7 @@ import React from "react";
 import Card from "../Carts/Cards";
 
 const Columnas = (props) => {
+
   return (
     <Card
       key={props.id}
