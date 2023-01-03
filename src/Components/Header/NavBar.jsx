@@ -3,10 +3,11 @@ import { Button, Form, Nav, Navbar } from "react-bootstrap/";
 import { Dropdown } from "./Dropdown";
 import { Link } from "react-router-dom";
 import "./misEstilos.css";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { mockGeneros } from "../../mock/mockGeneros";
 import Peliculas from "./Peliculas";
 import Busqueda from "./Busqueda";
+import { ContextoCarrito } from "../../Contexto/ContextoCarrito";
 
 export const NavBar = ({ items }) => {
   // https://api.themoviedb.org/3/discover/movie?api_key=e89c54fdd607bf1bf15474118f3abb7b&with_genres=53
@@ -73,8 +74,13 @@ export const NavBar = ({ items }) => {
     console.log(e.target.value);
   };
   let redir = () => {
-    window.location.href = window.location.origin +`/search/:${busqueda}`;
-}
+    window.location.href = window.location.origin + `/search/:${busqueda}`;
+  };
+
+  const ctxCarrito = useContext(ContextoCarrito);
+  useEffect(() => {
+    console.log("candida a mostrar en navbar", ctxCarrito.appCarrito.length);
+  }, [ctxCarrito.setappCarrito]);
 
   return (
     <>
@@ -102,19 +108,20 @@ export const NavBar = ({ items }) => {
             // items={["Accion", "Comedia", "Aventura", "Terror", "Drama"]}
           />
 
-          <Form onSubmit={e => e.preventDefault() || redir()}  className="d-flex" > 
-   
-              <Form.Control
-                type="search"
-                placeholder="Buscar"
-                className="me-2"
-                aria-label="Search"
-                onChange={e => setbusqueda(e.target.value)}   
-              />
-
-          </Form> 
+          <Form
+            onSubmit={(e) => e.preventDefault() || redir()}
+            className="d-flex"
+          >
+            <Form.Control
+              type="search"
+              placeholder="Buscar"
+              className="me-2"
+              aria-label="Search"
+              onChange={(e) => setbusqueda(e.target.value)}
+            />
+          </Form>
           <Nav.Link as={Link} to="/carrito">
-            Carrito
+            Carrito({ctxCarrito.appCarrito.length})
           </Nav.Link>
 
           <Nav.Link as={Link} to="/ingresar">

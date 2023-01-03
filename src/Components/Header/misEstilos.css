@@ -7,3 +7,34 @@
   color: rgb(0, 122, 255) !important;
   /* color: "#007aff" !important */
 }
+
+table{
+  table-layout: fixed;
+}
+
+.miTablaPersonalizada th{
+  width: 100px;
+  overflow: auto;
+  border: 1px solid;
+}
+
+.table>:not(caption)>*>* {
+
+  background-color: rgba(255, 255, 255, 0);
+}
+
+
+.table-striped>tbody>tr:nth-of-type(odd)>* {
+    --bs-table-accent-bg: var(--bs-table-striped-bg);
+    color: var(--bs-table-striped-color);
+}
+.table>:not(caption)>*>* {
+    background-color: rgba(255, 255, 255, 0);
+}
+.table-bordered>:not(caption)>*>* {
+    border-width: 0 1px;
+}
+.table>:not(caption)>*>* {
+
+  box-shadow: none;
+}
