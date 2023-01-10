@@ -1,70 +1,71 @@
-# Getting Started with Create React App
+# Proyecto de React Movie
+## Funcionalidades 
+#### Buscar por nombre de pelicula
+Pantalla principal
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<img src="https://user-images.githubusercontent.com/85085962/211642195-4fcba1c8-0d99-496e-89e8-370ec8a776a7.png" width="900px"/>
 
-## Available Scripts
+use un useeffect que actualiza la busqueda 
 
-In the project directory, you can run:
+<img src="https://user-images.githubusercontent.com/85085962/211642461-60cfd95f-519c-41d8-bb04-710b32130542.png" width="900px"/>
 
-### `npm start`
+en el caso de no hallar ninguna pelicula con ese nombre
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<img src="https://user-images.githubusercontent.com/85085962/211642577-e6a26dba-496f-4b67-98ba-b058c6c0e0ca.png" width="900px"/>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+#### Buscar Por genero
+se Lista in Dropdown con generos
 
-### `npm test`
+<img src="https://user-images.githubusercontent.com/85085962/211642748-89e9442e-b737-44ba-b82a-939c36d6df79.png" width="900px"/>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+En la barra de direcion se observa el id del genero que se selecion, luego en la aplicaion se puede ver el nombre del genero sumado a su contenido
 
-### `npm run build`
+<img src="https://user-images.githubusercontent.com/85085962/211642937-a6236c6b-0fa8-4259-9dd9-a1b46100bd69.png" width="900px"/>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### Añadir al carrito
+Tenomos un elemento amarillo con el simbolo de una suma, el cual nos permite añadir la pelicula que se escoje , a un carrito para luego tener otros acciones.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<img src="https://user-images.githubusercontent.com/85085962/211643287-5e04f4a7-939c-4fe3-bbae-6fcc0f266350.png" width="900px"/>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Cuando se le se puede observar que nos muestra una alerta indicando que esa pelicula se añadio con exito al carrito
 
-### `npm run eject`
+<img src="https://user-images.githubusercontent.com/85085962/211643957-dd51513a-9a00-4525-bf46-cb7a615cc2ca.png" width="900px"/>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+#### validacion al añadir
+Cuando se le da crick(1) se puede observar que nos muestra una advertencia indicando que esa pelicula ya esta en el carrito
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<img src="https://user-images.githubusercontent.com/85085962/211643784-5aa5f331-e4a3-4095-b946-9d7f5c276bae.png" width="900px"/>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+#### Logeo por medio de firebase
+#### Consulta de video trailer en youtobe 
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+#### No siempre estara fucional por tema de superacion de consultas
+Si bien no corresponde ala pelicula seleciona , se puede observar que la api esta fuincionando.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<img src="https://user-images.githubusercontent.com/85085962/211644033-0662252d-c5d7-4f75-a55b-84de43b561d7.png" width="900px"/>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Cambio de Fondo de la aplicacion en fucnion de la pelicula seleccionada
+Si se observa, hay una imagen relacina a al pelicula seleciona
 
-### Code Splitting
+<img src="https://user-images.githubusercontent.com/85085962/211644651-28a3c630-9a03-410e-9301-b485cfd4852d.png" width="900px"/>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Herramientas que se usaron
+### Hook
+#### useEffect
+ Se uso en su mayoria para cambiar estado de variales.
+ por ejemplo en el siquiente caso
+ 
+ Documentacion: [Use Effect](https://es.reactjs.org/docs/hooks-effect.html)
 
-### Analyzing the Bundle Size
+#### useContext
+#### useState
+#### Router
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+![carbon](https://user-images.githubusercontent.com/85085962/211648358-71bc4beb-b15e-4f29-9cfb-ffd43b0d623d.png)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+#### Bootstrap
+### 
+###
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
