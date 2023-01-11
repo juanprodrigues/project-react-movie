@@ -1,5 +1,5 @@
 # Proyecto de React Movie
-Proyecto integrador 
+Proyecto integrador realizado para la finalizacion del curso REACT JS FRONT END 2022 dictado por [Codo a Codo](https://www.buenosaires.gob.ar/educacion/codo-codo)
 ## Pre-requisitos
 1. Tener instalado node.
 
@@ -56,9 +56,9 @@ Cuando se le da click, se puede observar que nos muestra una alerta indicando qu
 <img src="https://user-images.githubusercontent.com/85085962/211643957-dd51513a-9a00-4525-bf46-cb7a615cc2ca.png" width="900px"/>
 
 #### Validación al añadir
-Cuando se le da crick(1) se puede observar que nos muestra una advertencia indicando que esa pelicula ya esta en el carrito
+Cuando se le da click se puede observar que nos muestra una advertencia indicando que esa pelicula ya esta en el carrito.
 
-<img src="https://user-images.githubusercontent.com/85085962/211643784-5aa5f331-e4a3-4095-b946-9d7f5c276bae.png" width="900px"/>
+<img src="https://user-images.githubusercontent.com/85085962/211691656-dfde6ad4-96e5-429e-944a-56b97dc148ee.png" width="900px"/>
 
 #### Logeo por medio de firebase
 Puede ser más bonito
@@ -78,11 +78,16 @@ Si se observa, hay una imagen relacionada la película que se seleccionó
 
 <img src="https://user-images.githubusercontent.com/85085962/211644651-28a3c630-9a03-410e-9301-b485cfd4852d.png" width="900px"/>
 
+### Carrito con peliculas que se añaden
+En esta pagina se podemos ver las las pelicuas que se añadieron, con detalles importantes, sumado al total qui se tiene que pagar,
+Como fucionalidad a futuro se planea hacer una secuencia de pasas para simular una compra exitosa.
+<img src="https://user-images.githubusercontent.com/85085962/211691181-9b5aada9-6496-4227-92cd-27547c3e1be7.png" width="900px"/>
+
+
 ## Herramientas que se usaron
 ### Hook
 #### useEffect
  Se usó en su mayoría para cambiar estado de variables.
- por ejemplo en el siguiente caso
  
 #### useContext
 Su principal uso es para poder usarlo como puente que lleva cambios entre componente padres e hijos mediante un useState, gracias a esto se puede cambiar el fondo en función de la película que se selecciona
