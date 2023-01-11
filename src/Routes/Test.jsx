@@ -7,6 +7,7 @@ const API_URL_SEARCH_NAME_END = "&page=1&include_adult=false";
 
 const Test = () => {
   const { name } = useParams();
+
   // console.log(id)
   const [movies, setMovies] = useState([]);
 

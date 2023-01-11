@@ -1,4 +1,5 @@
 import imagen from "./../../assets/logo.png";
+import iconLupa from "./../../assets/lupa.png";
 import { Button, Form, Nav, Navbar } from "react-bootstrap/";
 import { Dropdown } from "./Dropdown";
 import { Link } from "react-router-dom";
@@ -8,6 +9,7 @@ import { mockGeneros } from "../../mock/mockGeneros";
 import Peliculas from "./Peliculas";
 import Busqueda from "./Busqueda";
 import { ContextoCarrito } from "../../Contexto/ContextoCarrito";
+import { useNavigate } from "react-router-dom";
 
 export const NavBar = ({ items }) => {
   // https://api.themoviedb.org/3/discover/movie?api_key=e89c54fdd607bf1bf15474118f3abb7b&with_genres=53
@@ -64,6 +66,7 @@ export const NavBar = ({ items }) => {
   const listamia = mockGeneros;
   const [nombreBuscar, setNombreBuscar] = useState("");
   const [busqueda, setbusqueda] = useState("");
+  const { cartCount } = useContext(ContextoCarrito)
   function handleSubmit(e) {
     e.preventDefault();
     console.log("You clicked submit.", e.target[0].value);
@@ -81,6 +84,14 @@ export const NavBar = ({ items }) => {
   useEffect(() => {
     console.log("candida a mostrar en navbar", ctxCarrito.appCarrito.length);
   }, [ctxCarrito.setappCarrito]);
+
+  const [searchQuery, setSearchQuery] = useState("");
+  const navigate = useNavigate();
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    navigate(`search/:${searchQuery}`);
+  }
 
   return (
     <>
@@ -108,22 +119,44 @@ export const NavBar = ({ items }) => {
             // items={["Accion", "Comedia", "Aventura", "Terror", "Drama"]}
           />
 
-          <Form
-            onSubmit={(e) => e.preventDefault() || redir()}
+          {/* <Form
+            onSubmit={handleSubmit}
             className="d-flex"
+            action={'search/:'+busqueda}
           >
             <Form.Control
-              type="search"
               placeholder="Buscar"
               className="me-2"
               aria-label="Search"
-              onChange={(e) => setbusqueda(e.target.value)}
+              type="text"
+              value={busqueda}
+              // onChange={(event) => setSearchQuery(event.target.value)}
+              onChange={handleChange}
             />
-          </Form>
+          </Form> */}
+
+          <Nav.Link as={Link} to="/search" >
+           <div >
+               {/* <img
+                style={{ width: "10%", height: "100%" }}
+                src={iconLupa}
+                alt=""
+              /> */}
+              {/* <img src="https://img.icons8.com/ios-filled/50/000000/search--v1.png"/> */}
+              {/* <img className="imgIconSearch" style={{ width: "20%", height: "100%" }} src="https://img.icons8.com/ios-filled/50/FFFFFF/search--v1.png"/> */}
+              Busqueda
+                
+           </div> 
+          </Nav.Link>
           <Nav.Link as={Link} to="/carrito">
             Carrito({ctxCarrito.appCarrito.length})
           </Nav.Link>
-
+        {/* <Link
+                            to='/carrito'
+                            // className="btn btn-light rounded-pill fs-6 fw-bold me-3"
+                        >
+                            {/* { cartCount } */}
+                        {/* </Link>  */} 
           <Nav.Link as={Link} to="/ingresar">
             Ingresar
           </Nav.Link>

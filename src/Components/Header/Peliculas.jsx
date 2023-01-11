@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { useContext } from "react";
@@ -21,14 +21,20 @@ const Peliculas = (props) => {
   // const titulo = mockTest.results[0].original_title;
   // const dirImage =
   //   "https://image.tmdb.org/t/p/w500/" + mockTest.results[0].poster_path;
-  let listamia=""
-  if (Object.entries(props).length !== 0) {
+  let listamia = "";
+  console.log("viene vacio", props.contenido != undefined);
+  // console.log(Object.entries(props.contenido).length !== 0)
+  // if (Object.entries(props).length !== 0) {
+  if (props.contenido != undefined) {
     listamia = props.contenido;
     // console.log("api");
   } else {
     listamia = mockTest.results;
     // console.log("mock");
   }
+  useEffect(() => {
+    listamia = props.contenido;
+  }, [props.contenido]);
 
   function dividirEnListaChicas(listaPeliculas, cantSeparar) {
     var i = 0;
@@ -46,16 +52,37 @@ const Peliculas = (props) => {
   // Dividir en grupo de 4 artículos
   var result = dividirEnListaChicas(listamia, 4);
   const mostrar = result.map((item) => <Filas key={item.id} datos={item} />);
+  console.log("viene vacio1", props);
+  if (props.contenido!=undefined) {
+    if (props.contenido.length == 0) {
+      return (
+        <div style={{ padding: "0 0 100% 0" }} className="container text-center">
 
+
+<br />
+<br />
+
+ <br />
+ <br />
+ 
+          No se encuentras peliculas con este nombre
+        </div>
+      );
+    }
+  }
   return (
     <div>
       <br />
-      {props.genero?  <h1 className="text-center">Genero: {props.title}</h1>:""}
-    
-      <div>
+      {props.genero ? (
+        <h1 className="text-center">Genero: {props.title}</h1>
+      ) : (
+        ""
+      )}
+
+      <div className="container">
         {/* la suma de los md tiene que ser 12 */}
         <Row>
-          <Col xs={12} md={9} className="col-auto text-center">
+          <Col xs={12} md={12} className="col-auto text-center">
             <Row className="container">
               {/* <Row className="container" Style="margin-left: 12%; "> */}
               {mostrar}

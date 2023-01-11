@@ -99,7 +99,7 @@ const Detalles = (props) => {
     );
 
     if (peliculaObjeto1) {
-      alarma("error","La Pelicula " + peliculaObjeto.title + " ya se encuentra en el añadida.","Error",3000);
+      alarma("error","La Pelicula " + peliculaObjeto.title + " ya se encuentra en la lista.","Error",3000);
     } else {
       ctxCarrito.appCarrito.push(peliculaObjeto);
       ctxCarrito.setappCarrito(ctxCarrito.appCarrito);

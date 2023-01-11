@@ -11,6 +11,8 @@ import Error from "../Components/Utils/Error";
 import AppFirebase from "../Components/Firebase/AppFirebase";
 import Generos from "../Components/Header/Generos";
 import Test from "./Test";
+import FormBusqueda from "./SearchComponent";
+import SearchComponent from "./SearchComponent";
 
 const RoutesApp = () => {
   return (
@@ -43,7 +45,7 @@ const RoutesApp = () => {
           <Route path="detalles/:id" element={<Detalles />}></Route>
           <Route path="genero/:id" element={<Generos />}></Route>
 
-          <Route path="search/:name" element={<Test />}></Route>
+          <Route path="search/" element={<SearchComponent />}></Route>
 
           {/* en elcaso que no se encuentre redireciona a un 404 */}
           <Route
