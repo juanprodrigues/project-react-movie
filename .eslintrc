@@ -1,6 +1,6 @@
 {
-   "rules": {
-    "react-hooks/rules-of-hooks": [{ "enableDangerousAutofixThisMayCauseInfiniteLoops": true }],
-    "react-hooks/exhaustive-deps": [{ "enableDangerousAutofixThisMayCauseInfiniteLoops": true }]
-  }
+    "plugins": ["react-hooks"],
+    "rules": {
+      "react-hooks/exhaustive-deps": 0
+      }
 }
