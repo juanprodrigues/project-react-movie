@@ -4,39 +4,17 @@ import {Nav, Navbar } from "react-bootstrap/";
 import { Dropdown } from "./Dropdown";
 import { Link } from "react-router-dom";
 import "./misEstilos.css";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import { mockGeneros } from "../../mock/mockGeneros";
 
 import { ContextoCarrito } from "../../Contexto/ContextoCarrito";
-import { useNavigate } from "react-router-dom";
 
 export const NavBar = ({ items }) => {
   const listamia = mockGeneros;
-  const [nombreBuscar, setNombreBuscar] = useState("");
-  const [busqueda, setbusqueda] = useState("");
-  const { cartCount } = useContext(ContextoCarrito)
-  function handleSubmit(e) {
-    e.preventDefault();
-    setbusqueda(e.target[0].value);
-  }
-  const handleChange = (e) => {
-    setbusqueda(e.target.value);
-  };
-  let redir = () => {
-    window.location.href = window.location.origin + `/search/:${busqueda}`;
-  };
-
   const ctxCarrito = useContext(ContextoCarrito);
   useEffect(() => {
   }, [ctxCarrito.setappCarrito]);
 
-  const [searchQuery, setSearchQuery] = useState("");
-  const navigate = useNavigate();
-
-  function handleSubmit(event) {
-    event.preventDefault();
-    navigate(`search/:${searchQuery}`);
-  }
 
   return (
     <>

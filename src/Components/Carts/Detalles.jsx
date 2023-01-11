@@ -1,7 +1,5 @@
 import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { mockTest } from "../../mock/mockTest";
-import { mockGeneros } from "../../mock/mockGeneros";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "./misEstilos.css";
@@ -9,11 +7,8 @@ import { ContextoBackground } from "../../Contexto/ContextoBackground";
 import VideoTrailer from "../../APIYoutobe/components/VideoTrailer";
 import dirSuma from "./../../assets/suma.png";
 import { ContextoCarrito } from "../../Contexto/ContextoCarrito";
-import { Alert } from "react-bootstrap";
 import swal from "sweetalert";
 
-const API_URL =
-  "https://api.themoviedb.org/3/discover/movie?api_key=e89c54fdd607bf1bf15474118f3abb7b&with_genres=";
 const API_URL_1 = "https://api.themoviedb.org/3/movie/";
 const API_URL_2 = "?api_key=e89c54fdd607bf1bf15474118f3abb7b&language=en-US";
 
@@ -21,8 +16,6 @@ const Detalles = (props) => {
   //se usa  para indentificar la pelicula, se puede encontrar en el router
   const { id } = useParams();
   const [movies, setMovies] = useState([]);
-
-  let url = API_URL_1 + id + API_URL_2;
 
   useEffect(() => {
     fetch(API_URL_1 + id + API_URL_2)

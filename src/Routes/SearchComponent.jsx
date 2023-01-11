@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import Peliculas from "../Components/Header/Peliculas";
 const API_URL_SEARCH_NAME_START =
   "https://api.themoviedb.org/3/search/movie?api_key=e89c54fdd607bf1bf15474118f3abb7b&language=en-US&query=";

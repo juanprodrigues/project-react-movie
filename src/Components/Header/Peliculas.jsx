@@ -13,7 +13,7 @@ const Peliculas = (props) => {
 
   let listamia = "";
 
-  if (props.contenido != undefined) {
+  if (props.contenido !== undefined) {
     listamia = props.contenido;
   } else {
     listamia = mockTest.results;
@@ -38,8 +38,8 @@ const Peliculas = (props) => {
   // Dividir en grupo de 4 artículos
   var result = dividirEnListaChicas(listamia, 4);
   const mostrar = result.map((item) => <Filas key={item.id} datos={item} />);
-  if (props.contenido!=undefined) {
-    if (props.contenido.length == 0) {
+  if (props.contenido!==undefined) {
+    if (props.contenido.length === 0) {
       return (
         <div style={{ padding: "0 0 100% 0" }} className="container text-center">
 
