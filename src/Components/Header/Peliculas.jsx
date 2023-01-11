@@ -10,27 +10,13 @@ import { mockTest } from "../../mock/mockTest";
 const Peliculas = (props) => {
   const ctx = useContext(ContextoBackground);
   ctx.setappTheme(fondo);
-  // prosesar el mock
-  //   https://image.tmdb.org/t/p/w500/7VuQopunJnHKI1xejbdRUyDbP0S.jpg
-  //   console.log(mockTest.results[0].original_title);
-  //   console.log(mockTest.results[0].poster_path);
-  // https://image.tmdb.org/t/p/w500/
-  // se puede usar el siguiente endpoint-->
-  // https://api.themoviedb.org/3/movie/popular?api_key=e89c54fdd607bf1bf15474118f3abb7b&language=en-US&page=1
-  //api_key=e89c54fdd607bf1bf15474118f3abb7b
-  // const titulo = mockTest.results[0].original_title;
-  // const dirImage =
-  //   "https://image.tmdb.org/t/p/w500/" + mockTest.results[0].poster_path;
+
   let listamia = "";
-  console.log("viene vacio", props.contenido != undefined);
-  // console.log(Object.entries(props.contenido).length !== 0)
-  // if (Object.entries(props).length !== 0) {
+
   if (props.contenido != undefined) {
     listamia = props.contenido;
-    // console.log("api");
   } else {
     listamia = mockTest.results;
-    // console.log("mock");
   }
   useEffect(() => {
     listamia = props.contenido;
@@ -52,7 +38,6 @@ const Peliculas = (props) => {
   // Dividir en grupo de 4 artículos
   var result = dividirEnListaChicas(listamia, 4);
   const mostrar = result.map((item) => <Filas key={item.id} datos={item} />);
-  console.log("viene vacio1", props);
   if (props.contenido!=undefined) {
     if (props.contenido.length == 0) {
       return (

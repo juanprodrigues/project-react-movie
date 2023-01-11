@@ -10,8 +10,6 @@ import Detalles from "../Components/Carts/Detalles";
 import Error from "../Components/Utils/Error";
 import AppFirebase from "../Components/Firebase/AppFirebase";
 import Generos from "../Components/Header/Generos";
-import Test from "./Test";
-import FormBusqueda from "./SearchComponent";
 import SearchComponent from "./SearchComponent";
 
 const RoutesApp = () => {

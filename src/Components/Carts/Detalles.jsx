@@ -31,24 +31,10 @@ const Detalles = (props) => {
         setMovies(data);
       });
   }, []);
-  // console.log("data-->", movies);
 
-  if (movies.genres) {
-    // console.log(movies.genres);
-    for (let index = 0; index < movies.genres.length; index++) {
-      // console.log(movies.genres[index].name);
-    }
-  }
 
-  // const peliculaObjeto = mockTest.results.find((e) => e.id === Number(id));
   let peliculaObjeto = movies;
-  // const ObjGenerosd = [];
-  // for (let i = 0; i < peliculaObjeto.genre_ids.length; i++) {
-  //   const generos = mockGeneros.genres.find(
-  //     (e) => e.id === Number(peliculaObjeto.genre_ids[i])
-  //   );
-  //   ObjGenerosd.push(generos.name);
-  // }
+
   const styles = {
     header: {
       backgroundColor: "rgb(8 15 40 / 68%)",
@@ -57,30 +43,6 @@ const Detalles = (props) => {
       color: "white",
     },
   };
-
-  // //construir cadena de generos...
-  // let cadenaSting = "";
-  // for (let index = 0; index < ObjGenerosd.length; index++) {
-  //   if (ObjGenerosd[index]) {
-  //     cadenaSting = cadenaSting + ObjGenerosd[index] + ",";
-  //   } else {
-  //     cadenaSting = cadenaSting + ".";
-  //   }
-  // }
-  // const newStr = cadenaSting.slice(0, -1) + ".";
-
-  //construir cadena de generos...
-  //   let cadenaSting1 = "";
-  //   for (let index = 0; index < movies.genres.length; index++) {
-  //     if (movies.genres[index]) {
-  //       cadenaSting1 = cadenaSting1 + movies.genres[index].name + ",";
-  //     } else {
-  //       cadenaSting1 = cadenaSting1 + ".";
-  //     }
-  //   }
-  //   const newStr1 = cadenaSting1.slice(0, -1) + ".";
-
-  // console.log("test cadena",newStr1)
 
   // -------------------------------------------------------Context------------------------------------------
   const ctx = useContext(ContextoBackground);
@@ -91,7 +53,6 @@ const Detalles = (props) => {
   const ctxCarrito = useContext(ContextoCarrito);
 
   function activateLasers() {
-    console.log(ctxCarrito);
     // VALIDAR QUE NO SE INGRESE MAS DE UNA PELICULA
 
     const peliculaObjeto1 = ctxCarrito.appCarrito.find(
@@ -105,32 +66,7 @@ const Detalles = (props) => {
       ctxCarrito.setappCarrito(ctxCarrito.appCarrito);
       alarma("success","La Pelicula " + peliculaObjeto.title + " se añadio al carrito con exito.","Añadido",2000);
     }
-    // console.log("holi",peliculaObjeto1);
-    // }
-    // if (ctxCarrito.appCarrito.length !== 0) {
-    //   // console.log("caqwrfr",ctxCarrito.appCarrito[2] )
-    //   // console.log("carfr",ctxCarrito.appCarrito.length )
-    //   for (let i = 0; i < ctxCarrito.appCarrito.length; i++) {
-    //     console.log(ctxCarrito.appCarrito[i].id == peliculaObjeto.id); //falso
-    //     console.log(peliculaObjeto.id); //falso
-    //     console.log(ctxCarrito.appCarrito[i].id); //falso
-    //     if (ctxCarrito.appCarrito[i].id === peliculaObjeto.id) {
-    //       // console.log("obj",ctxCarrito.appCarrito[i].id)
-    //       console.log("Se encontro un elemento ya añadiodo");
-    //       alarma("error");
-    //     }
 
-    //     if (ctxCarrito.appCarrito[i].id !== peliculaObjeto.id) {
-    //       ctxCarrito.appCarrito.push(peliculaObjeto);
-    //       ctxCarrito.setappCarrito(ctxCarrito.appCarrito);
-    //       // console.log(ctxCarrito);
-    //       alarma("success");
-    //       console.log("desde el for");
-    //       console.log("bay");
-    //       break;
-    //     }
-    //   }
-    // }
   }
 
   function alarma(tipo,mensaje,titulo,tiempo) {
@@ -143,15 +79,6 @@ const Detalles = (props) => {
     });
   }
 
-  //   swal({
-  //     title: 'Añadido',
-  //     text: 'La Pelicula '+peliculaObjeto.title+" se añadio al carrito",
-  //     icon: 'error',
-  //     timer: 2000,
-  //     buttons: false,
-  // })
-
-  // console.log(peliculaObjeto.title + "| Official Trailer")
   return (
     <div style={styles.header}>
       <div className="container">

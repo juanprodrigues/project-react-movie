@@ -9,7 +9,6 @@ const SearchComponent = () => {
   const [search, setSearch] = useState("");
   //función de búsqueda
   const searcher = (e) => {
-    console.log(e.target.value);
     setSearch(e.target.value);
   };
   const [movies, setMovies] = useState([]);
@@ -18,14 +17,9 @@ const SearchComponent = () => {
     fetch(API_URL_SEARCH_NAME_START + search + API_URL_SEARCH_NAME_END)
       .then((res) => res.json())
       .then((data) => {
-        //   console.log(data.results.length);
-        console.log(search);
-
-        console.log(data.results);
-
         setMovies(data.results);
       })
-      .catch((e) => console.log("af", e));
+
   }, [search]);
   //renderizamos la vista
   return (
