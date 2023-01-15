@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import { ContextoBackground } from "../../Contexto/ContextoBackground";
 import fondo from "./../../assets/fondo.png";
 const Registrate = () => {
-  // import fondo from "./../../assets/fondo.png";
   const ctx = useContext(ContextoBackground);
   ctx.setappTheme(fondo);
   return (

@@ -60,8 +60,6 @@ Cuando se le da click se puede observar que nos muestra una advertencia indicand
 
 <img src="https://user-images.githubusercontent.com/85085962/211691656-dfde6ad4-96e5-429e-944a-56b97dc148ee.png" width="900px"/>
 
-#### Logeo por medio de firebase
-Puede ser más bonito
 #### Consulta de video trailer en youtube 
 En una versión ya desplegada, la api de películas sigue funcionando bien, pero para esta versión hay un inconveniente que no se reconoce provocando un problema en la búsqueda del titulo
 
@@ -83,6 +81,62 @@ En esta pagina se podemos ver las las pelicuas que se añadieron, con detalles i
 Como fucionalidad a futuro se planea hacer una secuencia de pasas para simular una compra exitosa.
 <img src="https://user-images.githubusercontent.com/85085962/211691181-9b5aada9-6496-4227-92cd-27547c3e1be7.png" width="900px"/>
 
+### Validaciones en el registro.
+
+Campos de Contraseña vacios 
+
+<img src="https://user-images.githubusercontent.com/85085962/212477468-cf2ddd05-4c70-4b4e-8eb8-f589d6ad5d43.png" width="400px"/>
+
+Todos los campos vacios 
+
+<img src="https://user-images.githubusercontent.com/85085962/212477469-b293aa9f-0bbd-455a-a8aa-150b55b56d75.png" width="400px"/>
+Correo vacion
+
+<img src="https://user-images.githubusercontent.com/85085962/212477470-cfc20421-a6ec-4449-95c8-4874d7ea433c.png" width="400px"/>
+
+Si se usa un formato incorrecto
+
+<img src="https://user-images.githubusercontent.com/85085962/212477471-efd0e1c7-c05d-4978-b513-8b2ee65fa441.png" width="400px"/>
+
+Las contraseñas no coinciden
+
+<img src="https://user-images.githubusercontent.com/85085962/212477472-dd50fef2-e460-4550-b5fc-e005a179ad38.png" width="400px"/>
+
+El Correo ingresado ya esta registrado en la base de datos de firebase
+
+<img src="https://user-images.githubusercontent.com/85085962/212477632-a059529a-eb24-438a-b6ef-08af6c5b66fa.png" width="400px"/>
+
+Por defecto, al almacenar las contraseñas el Firebase tiene que ser mañor que 6 caracteres(en la imagen se usa 5 caracteres)
+
+<img src="https://user-images.githubusercontent.com/85085962/212477634-be403424-5b87-49f3-94e2-c33feb6dd36e.png" width="400px"/>
+
+Si se logea , podemos observar que el navbar vamos a ver el correo de nuestro usuario logeado.
+
+NOTA: Si se hace F5 o recarga el dom, se deslogea , para restablecer el logeo se tiene que ingresar de nuevo para restablecer la seccion
+
+![image](https://user-images.githubusercontent.com/85085962/212526613-56713762-9fdb-4e38-9654-ced3c3e4a276.png)
+
+Session iniciada, se puede observar un historial que se encuentra en la base de Firebase.
+
+Cada pelicula listaada esta linkeada a los detalles de la misma.
+
+![image](https://user-images.githubusercontent.com/85085962/212526756-b0f20660-8adb-4ab6-934c-93e4efc5f24e.png)
+
+Si tenemos datos guardados asociados al correo ya registrado,se llenara el carrito con los elementos ya guardados en una session anterior.
+
+**TO DO**-> Falta implementar un **delete/update** para cada pelicula de la lista y se vea afectado la base de datos. 
+
+![image](https://user-images.githubusercontent.com/85085962/212526835-158d497e-c2c5-482c-a287-54b62a4d710f.png)
+
+
+
+### Tablas en Firebase.
+
+Se crea una colecion por cada usuario registrado.
+
+Cuando se añade una pelicula al carrito se crea un nuevo documento
+
+<img src="https://user-images.githubusercontent.com/85085962/212526511-516f93b4-f0b0-45a2-a7d5-104753820ac6.png" width="900px"/>
 
 ## Herramientas que se usaron
 ### Hook

@@ -1,5 +1,6 @@
 import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
+import { getFirestore } from "firebase/firestore";
 
 export const app = firebase.initializeApp({
   apiKey: process.env.REACT_APP_apiKey,
@@ -10,3 +11,5 @@ export const app = firebase.initializeApp({
   appId: process.env.REACT_APP_appId,
   measurementId: process.env.REACT_APP_measurementId,
 });
+
+export const db = getFirestore();

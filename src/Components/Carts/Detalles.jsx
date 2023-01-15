@@ -8,6 +8,9 @@ import VideoTrailer from "../../APIYoutobe/components/VideoTrailer";
 import dirSuma from "./../../assets/suma.png";
 import { ContextoCarrito } from "../../Contexto/ContextoCarrito";
 import swal from "sweetalert";
+import { ContextoUser } from "../../Contexto/ContextoUser";
+import { collection, addDoc } from "firebase/firestore";
+import { db } from "../Firebase/fb";
 
 const API_URL_1 = "https://api.themoviedb.org/3/movie/";
 const API_URL_2 = "?api_key=e89c54fdd607bf1bf15474118f3abb7b&language=en-US";
@@ -24,7 +27,6 @@ const Detalles = (props) => {
         setMovies(data);
       });
   }, []);
-
 
   let peliculaObjeto = movies;
 
@@ -44,6 +46,7 @@ const Detalles = (props) => {
   ctx.setappTheme(enviarFondo);
   // -------------------------------------------------------Context------------------------------------------
   const ctxCarrito = useContext(ContextoCarrito);
+  const ctxUser = useContext(ContextoUser);
 
   function activateLasers() {
     // VALIDAR QUE NO SE INGRESE MAS DE UNA PELICULA
@@ -53,16 +56,31 @@ const Detalles = (props) => {
     );
 
     if (peliculaObjeto1) {
-      alarma("error","La Pelicula " + peliculaObjeto.title + " ya se encuentra en la lista.","Error",3000);
+      alarma(
+        "error",
+        "La Pelicula " + peliculaObjeto.title + " ya se encuentra en la lista.",
+        "Error",
+        3000
+      );
     } else {
       ctxCarrito.appCarrito.push(peliculaObjeto);
       ctxCarrito.setappCarrito(ctxCarrito.appCarrito);
-      alarma("success","La Pelicula " + peliculaObjeto.title + " se añadio al carrito con exito.","Añadido",2000);
-    }
+      if (ctxUser.appUser) {
+        addDoc(collection(db, ctxUser.appUser.email), peliculaObjeto);
+      }
 
+      alarma(
+        "success",
+        "La Pelicula " +
+          peliculaObjeto.title +
+          " se añadio al carrito con exito.",
+        "Añadido",
+        2000
+      );
+    }
   }
 
-  function alarma(tipo,mensaje,titulo,tiempo) {
+  function alarma(tipo, mensaje, titulo, tiempo) {
     swal({
       title: titulo,
       text: mensaje,
