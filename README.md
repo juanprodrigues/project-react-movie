@@ -1,5 +1,7 @@
 # Proyecto de React Movie
 Proyecto integrador realizado para la finalizacion del curso REACT JS FRONT END 2022 dictado por [Codo a Codo](https://www.buenosaires.gob.ar/educacion/codo-codo)
+
+Link donde se encuentra en deploy del proyecto-> [https://proyecto-integrador-movie.netlify.app/](https://proyecto-integrador-movie.netlify.app/)
 ## Pre-requisitos
 1. Tener instalado node.
 
