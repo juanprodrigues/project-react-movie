@@ -1,19 +1,22 @@
-import {NavDropdown} from 'react-bootstrap/';
-import "./misEstilos.css";
-export const Dropdown = ({title, items}) => {
-  return (
-      <>
-          <NavDropdown title={ title } id="basic-nav-dropdown">
+import { NavDropdown } from "react-bootstrap/";
+import { Link } from "react-router-dom";
 
-            {
-                items.map((item)=> 
-                    <NavDropdown.Item
-                        key={item}
-                        href='#'>
-                        {item}
-                    </NavDropdown.Item>)
-            }
-          </NavDropdown>
-      </>
+import "./misEstilos.css";
+export const Dropdown = (props) => {
+  return (
+    <>
+      
+
+      <NavDropdown title={props.title} id="basic-nav-dropdown">
+        {props.items.genres.map((item) => (
+          <Link to={`/genero/${item.id}`} style={{ textDecoration: 'none' ,color: "black"}}>
+          <NavDropdown.Item key={item.id} href={`/genero/${item.id}`}>
+            {item.name}
+          </NavDropdown.Item>
+          </Link>
+        ))}
+      </NavDropdown>
+
+    </>
   );
-}
+};

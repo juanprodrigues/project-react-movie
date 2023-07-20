@@ -1,13 +1,15 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
+import { ContextoUser } from "../../Contexto/ContextoUser";
 import Auth from "./Auth";
 import { app } from "./fb";
 import Home from "./Home";
 
 function AppFirebase() {
+  const ctx = useContext(ContextoUser);
   const [usuario, setUsuario] = React.useState(null);
   useEffect(() => {
     app.auth().onAuthStateChanged((usuarioFirebase) => {
-      console.log("ya tienes sesión iniciada con:", usuarioFirebase);
+      ctx.setappUser(usuarioFirebase);
       setUsuario(usuarioFirebase);
     });
   }, []);

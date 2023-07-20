@@ -1,25 +1,34 @@
-
 .wrap{
 
     backdrop-filter: blur(10px);
   }
 
-  
-/* .bg{
-	background-size: cover;
-	height: 100px;
-	text-align: center;
-	position: relative;
-	z-index: 5;
+
+  .swal-modal {
+    background-color: rgba(8,15,40,0.69);
+    /* background-color:  url("../../assets/fondo.png"); */
+    border: 3px solid rgba(8,15,40,0.69);;
+  }
+
+  .swal-icon--success:after, .swal-icon--success:before {
+    background:  rgba(8,15,40,0) !important;
+  }
+
+  /* .swal-icon--success__hide-corners {
+
+    background-color:  rgba(8,15,40,0.69);
+  } */
+
+  .swal-icon--success__hide-corners {
+    background-color: rgba(8,15,40,0);
 }
-.bg:after{
-	content: "";
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	left:0;
-	top:0;
-	background: inherit;
-	filter: blur(10px);
-	z-index: 3;
-} */
+
+.swal-title {
+  color: rgb(255 255 255);
+}
+
+.swal-text {
+  color: rgb(255 255 255);
+}
+
+

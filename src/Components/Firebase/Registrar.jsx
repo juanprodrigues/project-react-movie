@@ -1,6 +1,6 @@
 import React from "react";
 
-const Registrar = ({changeAuthMode,submitHandler}) => {
+const Registrar = ({changeAuthMode,submitHandler,errorFirebase}) => {
   return (
     <div className="Auth-form-container">
       <form onSubmit={submitHandler} className="Auth-form">
@@ -31,13 +31,28 @@ const Registrar = ({changeAuthMode,submitHandler}) => {
               placeholder="Password"
             />
           </div>
+          <div className="form-group mt-3">
+            <label> Repeat Password</label>
+            <input
+              htmlFor="passwordField"
+              type="password"
+              id="passwordField"
+              className="form-control mt-1"
+              placeholder="Password"
+            />
+          </div>
           <div className="d-grid gap-2 mt-3">
             <button type="submit" className="btn btn-primary">
               Registrate
             </button>
+            <div style={{color:"red"}}>
+              {errorFirebase}
+            </div>
           </div>
         </div>
+        
       </form>
+      
     </div>
   );
 };

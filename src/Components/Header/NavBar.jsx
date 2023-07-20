@@ -1,13 +1,32 @@
 import imagen from "./../../assets/logo.png";
-import { Form, Nav, Navbar } from "react-bootstrap/";
+
+import { Nav, Navbar } from "react-bootstrap/";
 import { Dropdown } from "./Dropdown";
 import { Link } from "react-router-dom";
 import "./misEstilos.css";
+import { useContext, useEffect } from "react";
+import { mockGeneros } from "../../mock/mockGeneros";
+
+import { ContextoCarrito } from "../../Contexto/ContextoCarrito";
+import { ContextoUser } from "../../Contexto/ContextoUser";
 
 export const NavBar = ({ items }) => {
+  const listamia = mockGeneros;
+  const ctxCarrito = useContext(ContextoCarrito);
+  useEffect(() => {}, [ctxCarrito.setappCarrito]);
+
+  const ctxUser = useContext(ContextoUser);
+  let loged = false;
+  let email = "";
+
+  if (ctxUser.appUser) {
+    email = ctxUser.appUser.email;
+    loged = true;
+  }
+
   return (
     <>
-      <Navbar.Brand as={Link} to="/" >
+      <Navbar.Brand as={Link} to="/">
         <img
           src={imagen}
           height="45px"
@@ -19,45 +38,23 @@ export const NavBar = ({ items }) => {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ms-auto">
-          {/* {items.map((item) => (
-            <Nav.Link key={item} href={`#${item}`}>
-              {item}
-            </Nav.Link>
-
-         
-
-
-
-          ))} */}
-          <Nav.Link as={Link} to="/"  >
+          <Nav.Link as={Link} to="/">
             Inicio
           </Nav.Link>
-          <Nav.Link as={Link} to="/peliculas"  >
+          <Nav.Link as={Link} to="/peliculas">
             Peliculas
           </Nav.Link>
-          <Dropdown
-            title="Generos"
-            items={["Accion", "Comedia", "Aventura", "Terror", "Drama"]}
-             />
-          <Form className="d-flex">
-            <Form.Control
-              type="search"
-              placeholder="Buscar"
-              className="me-2"
-              aria-label="Search"
-            />
-          </Form>
+          <Dropdown title="Generos" items={listamia} />
 
-          <Nav.Link as={Link} to="/carrito"  >
-            Carrito
+          <Nav.Link as={Link} to="/search">
+            <div>Busqueda</div>
+          </Nav.Link>
+          <Nav.Link as={Link} to="/carrito">
+            Carrito({ctxCarrito.appCarrito.length})
           </Nav.Link>
 
-          <Nav.Link as={Link} to="/ingresar"  >
-            Ingresar
-          </Nav.Link>
-
-          <Nav.Link as={Link} to="/registrate"  >
-            Registrate
+          <Nav.Link as={Link} to="/ingresar">
+            {loged ? "Soy " + email : "Ingresar"}
           </Nav.Link>
         </Nav>
       </Navbar.Collapse>

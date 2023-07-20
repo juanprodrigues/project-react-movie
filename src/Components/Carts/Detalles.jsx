@@ -1,32 +1,35 @@
-import React, { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { mockTest } from "../../mock/mockTest";
-import { mockGeneros } from "../../mock/mockGeneros";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "./misEstilos.css";
 import { ContextoBackground } from "../../Contexto/ContextoBackground";
 import VideoTrailer from "../../APIYoutobe/components/VideoTrailer";
-
 import dirSuma from "./../../assets/suma.png";
-const Detalles = (props) => {
-  //se usa para indentificar la pelicula, se puede encontrar en el router
-  const { id } = useParams();
+import { ContextoCarrito } from "../../Contexto/ContextoCarrito";
+import swal from "sweetalert";
+import { ContextoUser } from "../../Contexto/ContextoUser";
+import { collection, addDoc } from "firebase/firestore";
+import { db } from "../Firebase/fb";
 
-  const peliculaObjeto = mockTest.results.find((e) => e.id === Number(id));
-  const ObjGenerosd = [];
-  for (let i = 0; i < peliculaObjeto.genre_ids.length; i++) {
-    const generos = mockGeneros.genres.find(
-      (e) => e.id === Number(peliculaObjeto.genre_ids[i])
-    );
-    ObjGenerosd.push(generos.name);
-  }
-  // -------------------------------------------------------Context------------------------------------------
-  const ctx = useContext(ContextoBackground);
-  const enviarFondo =
-    "https://image.tmdb.org/t/p/w500/" + peliculaObjeto.backdrop_path;
-  ctx.setappTheme(enviarFondo);
-  // -------------------------------------------------------Context------------------------------------------
+const API_URL_1 = "https://api.themoviedb.org/3/movie/";
+const API_URL_2 = "?api_key=e89c54fdd607bf1bf15474118f3abb7b&language=en-US";
+
+const Detalles = (props) => {
+  //se usa  para indentificar la pelicula, se puede encontrar en el router
+  const { id } = useParams();
+  const [movies, setMovies] = useState([]);
+
+  useEffect(() => {
+    fetch(API_URL_1 + id + API_URL_2)
+      .then((res) => res.json())
+      .then((data) => {
+        setMovies(data);
+      });
+  }, []);
+
+  let peliculaObjeto = movies;
+
   const styles = {
     header: {
       backgroundColor: "rgb(8 15 40 / 68%)",
@@ -36,16 +39,56 @@ const Detalles = (props) => {
     },
   };
 
-  //construir cadena de generos...
-  let cadenaSting = "";
-  for (let index = 0; index < ObjGenerosd.length; index++) {
-    if (ObjGenerosd[index]) {
-      cadenaSting = cadenaSting + ObjGenerosd[index] + ",";
+  // -------------------------------------------------------Context------------------------------------------
+  const ctx = useContext(ContextoBackground);
+  const enviarFondo =
+    "https://image.tmdb.org/t/p/w500/" + peliculaObjeto.backdrop_path;
+  ctx.setappTheme(enviarFondo);
+  // -------------------------------------------------------Context------------------------------------------
+  const ctxCarrito = useContext(ContextoCarrito);
+  const ctxUser = useContext(ContextoUser);
+
+  function activateLasers() {
+    // VALIDAR QUE NO SE INGRESE MAS DE UNA PELICULA
+
+    const peliculaObjeto1 = ctxCarrito.appCarrito.find(
+      (e) => e.id === Number(peliculaObjeto.id)
+    );
+
+    if (peliculaObjeto1) {
+      alarma(
+        "error",
+        "La Pelicula " + peliculaObjeto.title + " ya se encuentra en la lista.",
+        "Error",
+        3000
+      );
     } else {
-      cadenaSting = cadenaSting + ".";
+      ctxCarrito.appCarrito.push(peliculaObjeto);
+      ctxCarrito.setappCarrito(ctxCarrito.appCarrito);
+      if (ctxUser.appUser) {
+        addDoc(collection(db, ctxUser.appUser.email), peliculaObjeto);
+      }
+
+      alarma(
+        "success",
+        "La Pelicula " +
+          peliculaObjeto.title +
+          " se añadio al carrito con exito.",
+        "Añadido",
+        2000
+      );
     }
   }
-  const newStr = cadenaSting.slice(0, -1) + ".";
+
+  function alarma(tipo, mensaje, titulo, tiempo) {
+    swal({
+      title: titulo,
+      text: mensaje,
+      icon: tipo,
+      timer: tiempo,
+      buttons: false,
+    });
+  }
 
   return (
     <div style={styles.header}>
@@ -70,29 +113,27 @@ const Detalles = (props) => {
                 />
               </Row>
               <Row>
-                <Col  md={4}>
+                <Col md={4}>
                   <h1 style={{ color: "white" }}> {peliculaObjeto.title}</h1>
                 </Col>
                 <Col md={3}>
+                  {/* <button onClick={activateLasers}> */}
+                  {/* Icono de + para añadir pelicual al carro */}
                   <img
+                    onClick={activateLasers}
                     src={dirSuma}
                     alt={peliculaObjeto.title}
                     style={{ width: "80px", height: "80px" }}
                   />
+                  {/* </button> */}
                 </Col>
               </Row>
-              {/* <Row>
-                <h6>{peliculaObjeto.original_title}</h6>
-              </Row> */}
               <Row>
                 Genero:
-                {newStr}
+                {/* {newStr} */}
               </Row>
               <Row>Fecha de estreno: {peliculaObjeto.release_date}</Row>
-              {/* <Row>voto promedio: {peliculaObjeto.vote_average}</Row> */}
               <Row>Sinopsis: {peliculaObjeto.overview}</Row>
-              {/* <Row>Popularidad: {peliculaObjeto.popularity}</Row> */}
-              {/* <Row>Trailer</Row> */}
             </div>
           </Col>
         </Row>
