@@ -60,7 +60,6 @@ const Auth = (props) => {
     }
 
     if (authMode === true) {
-      
       iniciarSesion(correo, password);
     }
   };
